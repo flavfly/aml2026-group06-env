@@ -1,6 +1,6 @@
 name: "base"
 channels:
-	# important: do not use 'defaults', but always include 'nodedefaults'
+  # important: do not use 'defaults', but always include 'nodedefaults'
   - conda-forge
   - nodefaults
 dependencies:
