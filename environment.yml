@@ -1,0 +1,24 @@
+name: feature-augmented-transformers
+channels:
+  - pytorch
+  - conda-forge
+  - defaults
+dependencies:
+  - python=3.10
+  - pip
+  - numpy
+  - pandas
+  - scikit-learn  # For AUROC, F1, and data splitting
+  - matplotlib    # For plotting confusion matrices and ROC curves
+  - seaborn
+  - tqdm          # Progress bars for training loops
+  - pytorch       # Core DL framework
+  - torchvision
+  - torchaudio
+  - cpuonly       # Change to 'pytorch-cuda=11.8' (or similar) if using GPU-enabled Renku nodes
+  - pip:
+    - transformers  # For BERT, RoBERTa, and custom classification heads
+    - datasets      # To load 'Hello-SimpleAI/HC3' directly
+    - evaluate      # Hugging Face evaluation library
+    - nltk          # For stylometric features (word/sent length, stopwords)
+    - accelerate    # For optimized training loops
