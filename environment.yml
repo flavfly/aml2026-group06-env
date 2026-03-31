@@ -15,7 +15,6 @@ dependencies:
   - xarray
   - pip
   - pip:
-	  # put packages to be installed by pip here
     - deepsmiles
     - rdkit
 # Note: prefix can be changed
