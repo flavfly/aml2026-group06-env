@@ -17,5 +17,6 @@ dependencies:
   - pip:
     - deepsmiles
     - rdkit
+    - nltk
 # Note: prefix can be changed
 prefix: "/opt/conda"
