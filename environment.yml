@@ -6,7 +6,6 @@ channels:
   - nodefaults
 dependencies:
   - python=3.9
-  - tensorflow-gpu
   - numba
   - scikit-learn
   - pandas
@@ -19,7 +18,7 @@ dependencies:
   - pytorch
   - torchvision
   - torchaudio
-  - pytorch-cuda=11.8
+  - pytorch-cuda=12.1
   - pip
   - pip:
     - deepsmiles
