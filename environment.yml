@@ -1,22 +1,33 @@
 name: "base"
 channels:
-  # important: do not use 'defaults', but always include 'nodedefaults'
+  - pytorch
   - conda-forge
   - nodefaults
 dependencies:
-  - python=3.9 # set your python version here
-  - tensorflow-gpu
-  - numba
-  - scikit-learn
-  - pandas
-  - seaborn
-  - matplotlib
-  - jupyterlab
-  - xarray
+  - python=3.9              # kept from current env for backward compatibility
+  - tensorflow-gpu          # kept from current env
+  - numba                   # kept from current env
+  - scikit-learn            # used by both RF baseline and RoBERTa evaluation
+  - pandas                  # used by all scripts
+  - numpy                   # used by all scripts
+  - seaborn                 # kept from current env
+  - matplotlib              # used by both RF and RoBERTa for plots
+  - jupyterlab              # kept from current env
+  - xarray                  # kept from current env
+  - tqdm                    # progress bars (RoBERTa training)
+  - pytorch                 # core DL framework for Model 2+3
+  - torchvision
+  - torchaudio
+  - pytorch-cuda=11.8       # GPU support for NVIDIA A100
   - pip
   - pip:
-    - deepsmiles
-    - rdkit
-    - nltk
-# Note: prefix can be changed
+    - deepsmiles            # kept from current env
+    - rdkit                 # kept from current env
+    - nltk                  # used by stylometric feature extraction
+    - transformers==4.44.0  # pinned — known-good tokenizer behavior
+    - tokenizers==0.19.1    # pinned — avoids BPE bug in newer versions
+    - datasets              # to load HC3 dataset
+    - evaluate              # Hugging Face evaluation library
+    - accelerate            # for optimized training loops
+    - joblib                # used by RF baseline for model saving
 prefix: "/opt/conda"
